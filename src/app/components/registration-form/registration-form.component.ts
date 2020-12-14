@@ -1,32 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import {ExampleServiceService} from '../../service/example-service.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-registration-form',
-  template: `
-    <p>{{namew}}</p>
-    {{cislo | numbers}}
-
-    <button (click)="onClick()">Say hello</button>
-
-  `,
+  templateUrl: './registration-form.component.html',
   styleUrls: ['./registration-form.component.scss']
 })
 export class RegistrationFormComponent implements OnInit {
 
-  namew = 'Adam';
-  cislo = 6;
+  @Input() user: User;
+  @Output() submitUser: EventEmitter<User> = new EventEmitter<User>();
 
-  constructor(
-    private exampleService: ExampleServiceService,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  onClick(): void {
-    this.exampleService.sayHello();
-    this.namew = 'Eva';
-  }
+  submitForm(): void {
+    const u: User = {
+      username: 'user10',
+      forename: 'Yyyyyy',
+      surname: 'Xxxxxx',
+    };
 
+    this.submitUser.emit(u);
+  }
 }
+
+export interface User {
+  username: string;
+  forename: string;
+  surname: string;
+}
+
