@@ -1,0 +1,8 @@
+
+<div>
+  <div *ngIf="error" class="login-error">Neplatné jméno, nebo heslo.</div>
+  <app-login-form *ngIf="!loginInProgress" (submitUser)="login($event)"></app-login-form>
+  <div *ngIf="loginInProgress">Přihlašuji...</div>
+</div>
+
+

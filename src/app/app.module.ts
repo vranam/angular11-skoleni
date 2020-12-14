@@ -12,6 +12,9 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleComponent } from './components/article/article.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { EditorPageComponent } from './pages/editor-page/editor-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { ArticleComponent } from './components/article/article.component';
     ContentPageComponent,
     HeaderComponent,
     ArticleComponent,
+    LoginPageComponent,
+    LoginFormComponent,
+    EditorPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +37,8 @@ import { ArticleComponent } from './components/article/article.component';
       { path: '', redirectTo: 'content', pathMatch: 'full'},
       { path: 'content', component: ContentPageComponent },
       { path: 'registration', component: RegistrationPageComponent },
+      { path: 'login', component: LoginPageComponent },
+      { path: 'editor', component: EditorPageComponent },
     ])
   ],
   providers: [

@@ -3,6 +3,14 @@
 <hr>
 <a routerLink="content">Content</a>
 &nbsp;-&nbsp;
-<a routerLink="registration">registration</a>
+<span *ngIf="!authService.sessionId">
+  <a routerLink="registration">registration</a>
+  &nbsp;-&nbsp;
+  <a routerLink="login">login</a>
+</span>
+<span *ngIf="authService.sessionId">
+  <a routerLink="editor">Editor</a>
+</span>
+
 
 
