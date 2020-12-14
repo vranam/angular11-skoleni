@@ -10,6 +10,7 @@ import { RegistrationPageComponent } from './pages/registration-page/registratio
 import { ContentPageComponent } from './pages/content-page/content-page.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'content', pathMatch: 'full'},
       { path: 'content', component: ContentPageComponent },

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Article, ArticlesApiService } from '../../service/articles-api.service';
 
 @Component({
   selector: 'app-content-page',
@@ -7,23 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentPageComponent implements OnInit {
 
-  data: Article[] = [
-    {title: 'Článek 1', content: 'blabla', author: 'Jan Nevidím', created: new Date()},
-    {title: 'Článek 2', content: 'vldsdsjdj jddshxs jdjsjjdjd jsdh', author: 'xyz', created: new Date()}
-  ];
+  data: Article[];
 
-  constructor() {
+  constructor(
+    private articlesApi: ArticlesApiService
+  ) {
   }
 
   ngOnInit(): void {
+    this.articlesApi.getArticles().subscribe(
+      result => {
+        this.data = result;
+      }
+    );
   }
-
 }
 
-
-interface Article {
-  title: string;
-  content: string;
-  author: string;
-  created: Date;
-}
