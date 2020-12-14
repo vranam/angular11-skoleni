@@ -3,29 +3,3 @@
 }
 
 
-.article-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: 1px solid #989292;
-  padding: 10px;
-
-  div {
-    width: 60%;
-  }
-
-  div:first-child {
-    width: 20%;
-  }
-
-  div:last-child {
-    width: 20%;
-    text-align: right;
-  }
-}
-
-.article-body {
-  border: 1px solid #989292;
-  padding: 10px;
-  margin-bottom: 20px;
-}

@@ -11,6 +11,7 @@ import { ContentPageComponent } from './pages/content-page/content-page.componen
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationPageComponent,
     ContentPageComponent,
     HeaderComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
