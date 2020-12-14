@@ -1,1 +1,8 @@
-<p>content-page works!</p>
+<div *ngFor="let item of data">
+  <div class="article-header">
+    <div>{{item.created.toLocaleString()}}</div>
+    <div>{{item.title}}</div>
+    <div>{{item.author}}</div>
+  </div>
+  <div class="article-body">{{item.content}}</div>
+</div>
