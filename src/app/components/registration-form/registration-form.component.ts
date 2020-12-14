@@ -7,22 +7,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RegistrationFormComponent implements OnInit {
 
-  @Input() user: User;
   @Output() submitUser: EventEmitter<User> = new EventEmitter<User>();
 
-  constructor() { }
+  user: User;
+
+  constructor() {
+    this.user = {
+      username: '',
+      forename: '',
+      surname: ''
+    };
+  }
 
   ngOnInit(): void {
   }
 
   submitForm(): void {
-    const u: User = {
-      username: 'user10',
-      forename: 'Yyyyyy',
-      surname: 'Xxxxxx',
-    };
-
-    this.submitUser.emit(u);
+    this.submitUser.emit(this.user);
   }
 }
 
