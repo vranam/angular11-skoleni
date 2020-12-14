@@ -1,2 +1,7 @@
-<span>Hello world</span>
-<app-registration-form></app-registration-form>
+<span>Reg formular</span>
+
+
+<app-registration-form
+  [user]="pepa"
+  (submitUser)="addUser($event)"
+></app-registration-form>
